@@ -3,49 +3,77 @@
     --secondary: #fdbb3b;
 }
 
-* {box-sizing: border-box;
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 0;}
-    
-
-    body {
-        font-family: "lilita one" ;
-        background-color: var(--primary);
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 100vh;
-    }
-
-    header {
-        width: 100%;
-        color: var(--secondary);
-        padding: 1rem;
-        text-align: center;
-        font-size: 1.8rem;
-    }
+    padding: 0;
+}
 
 
-    main {
-        width: 100%;
-        padding: 5%;
-        text-align: center;
+body {
+    font-family: "lilita one";
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
 
-    }
+header {
+    width: 100%;
+    color: var(--secondary);
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
 
-    .intro {
-        text-align: left;
-        padding: 0 5%;
-    }
 
-    .intro h2 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
+main {
+    width: 100%;
+    padding: 5%;
+    text-align: center;
 
-    .intro p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
+}
+
+.intro {
+    text-align: left;
+    padding: 0 5%;
+}
+
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'arial';
+}
+
+.start-btn {
+    margin-top: 15%;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    border: none;
+    font-family: "lilita one";
+    cursor: pointer;
+}
+
+.quiz-image {
+    max-width: 90%;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: var(--secondary);
+    width: 100%;
+    font-family: "arial";
+    color: black;
+    font-size: .8rem;
+    padding: 8px;
+}
