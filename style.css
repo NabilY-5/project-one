@@ -7,6 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* border: solid red 1px; */
 }
 
 
@@ -40,6 +41,9 @@ main {
 .intro {
     text-align: left;
     padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 
@@ -55,8 +59,8 @@ main {
 }
 
 .start-btn {
-    margin-top: 15%;
-    padding: 15px 30px;
+    margin: 10% 20%;
+    padding: 10px;
     border-radius: 10px;
     font-size: 1.1rem;
     border: none;
@@ -76,4 +80,36 @@ footer {
     color: black;
     font-size: .8rem;
     padding: 8px;
+}
+
+@media screen and (min-width: 1200px ) {
+ 
+
+main {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.intro {
+    width: 50%;
+}
+.start-section {
+    flex-direction: row;
+}
+
+.quiz-image {
+    width: 70%;
+    margin-left: 20%;
+}
+
+.start-btn {
+    margin-top: 20%;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    margin-top: 5% ;
+}
+    
 }
