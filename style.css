@@ -82,6 +82,31 @@ footer {
     padding: 8px;
 }
 
+/* Page Javascript 1ere question */
+ul {
+    list-style: none;
+    margin: 40px 0;
+}
+
+li {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    font-family: "roboto";
+    font-size: 1.1rem;
+    text-justify: auto;
+
+    
+}
+
+ul li:hover  {
+   border: solid  3px ;
+   box-shadow:10px 5px 5px black;
+}
+
 @media screen and (min-width: 1200px ) {
  
 
