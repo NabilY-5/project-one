@@ -21,19 +21,41 @@ startButton.addEventListener("click", () => {
   const ul = document.createElement("ul");
 
   const choices = [
-    "C'est le même langage, mais le nom  JavaScript  est utilisé pour le code s'exécutant dans une page Web",
-    "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe",
-    "Java est une version améliorée de JavaScript",
-    "Java est une île, ça n'a rien à voir !",
+    {text: "C'est le même langage, mais le nom  JavaScript  est utilisé pour le code s'exécutant dans une page Web",
+     answer: true,},
+    {text: "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe", answer: false,},
+    {text: "Java est une version améliorée de JavaScript", answer: false,},
+    {text: "Java est une île, ça n'a rien à voir !", answer: false,},
   ];
+
   choices.forEach((choiceAnswer) => {
     const li = document.createElement("li");
-    li.textContent = choiceAnswer;
-    li.onclick = () => ;
+    li.textContent = choiceAnswer.text;
+
+    li.addEventListener("click", () => {
+      if (choiceAnswer.answer) {
+        li.style.backgroundColor="green";
+        li.style.color="white";
+      }
+        else {
+          li.style.backgroundColor="red";
+          li.style.color="white";
+        }
+      });
 
     ul.appendChild(li);
+    console.log(typeof answer);
   });
+
+    // let score = 0;
+
+    // document.score.createElement("p");
+    // score.textContent= `${score/10}`;
+    // mainSection.appendChild(score);
+
 
   mainSection.appendChild(container);
   mainSection.appendChild(ul);
+
 });
+    
