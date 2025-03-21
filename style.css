@@ -99,47 +99,48 @@ li {
     font-size: 1.1rem;
     text-justify: auto;
 
-    
-}
-
-ul li:hover  {
-   border: solid  3px ;
-   box-shadow:10px 5px 5px black;
-}
-
-@media screen and (min-width: 1200px ) {
- 
-
-main {
-    display: flex;
-    flex-direction: row;
 
 }
 
-.intro {
-    width: 50%;
-}
-.start-section {
-    flex-direction: row;
+ul li:hover {
+    border: solid 3px;
+    box-shadow: 10px 5px 5px black;
 }
 
-.quiz-image {
-    width: 70%;
-    margin-left: 20%;
+@media screen and (min-width: 1200px) {
+
+
+    main {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .intro {
+        width: 50%;
+    }
+
+    .start-section {
+        flex-direction: row;
+    }
+
+    .quiz-image {
+        width: 70%;
+        margin-left: 20%;
+    }
+
+    .start-btn {
+        margin-top: 20%;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+        margin-top: 5%;
+    }
+
 }
 
-.start-btn {
-    margin-top: 20%;
-}
-
-.intro p {
-    font-size: 1.1rem;
-    margin-top: 5% ;
-}
-    
-}
-
-@media screen and ( min-width: 768px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
     .intro p {
         width: 60%;
         font-size: 1.1rem;
