@@ -136,7 +136,7 @@ startButton.addEventListener("click", () => {
 /*affichage numero de la question, enoncé et les reponses*/
 const showQuestion = () => {
   const questionDetails = questions[currentQuestionIndex]
-  questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`; /*a rechercher*/
+  questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
   /* RACCOURCI NE FONCTIONNE PAS
     for (let i = 0; i < questionDetails.answers.length; i++) {
@@ -165,7 +165,6 @@ const showQuestion = () => {
     if (element.textContent == questions[currentQuestionIndex].good) {
       element.style.backgroundColor = "green";
       element.style.color = "white";
-      /*element.classList.add("selected");*/
       score++;
     }
     else {
@@ -202,8 +201,7 @@ const nextQ = () => { /* A REVOIR POUR ne pas creer 10 btn et enlever les couleu
 
 const ShowScore = () => {
   blocQuestion.style.display = "none";
-  enonce.display = "none";
-  reponses.display = "none";
+
   if (score > 5) {
     winorloose.textContent = "Bravo!";
     /* pb a afficher l'image */
