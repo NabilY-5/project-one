@@ -133,10 +133,10 @@ startButton.addEventListener("click", () => {
   showQuestion();
 });
 /*DEBUT DE LA BOUCLE -- definir une fonction qui fait une boucle de 9tours*/
-
+const questionDetails = questions[currentQuestionIndex]
 /*affichage numero de la question, enoncé et les reponses*/
 const showQuestion = () => {
-  const questionDetails = questions[currentQuestionIndex]
+
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
   /* RACCOURCI NE FONCTIONNE PAS
@@ -182,6 +182,7 @@ const showQuestion = () => {
       });
     }
 
+
     nextButton.style.display = "block";
     nextButton.textContent = "Question suivante";
 
@@ -198,6 +199,9 @@ const showQuestion = () => {
 
 /* quand tu appuie sur le btn next */
 
+
+
+const nextQ = () => {
 
 const nextQ = () => {
 
@@ -306,3 +310,4 @@ au clic de fin faire apparaitre le score et les text/image definies (tableaux)*/
   mainSection.appendChild(ul);
 
 }); */
+
