@@ -1,6 +1,9 @@
 const mainSection = document.querySelector("main");
 const intro = document.querySelector(".intro");
 const startSection = document.querySelector(".start-section");
+const mainSection = document.querySelector("main");
+const intro = document.querySelector(".intro");
+const startSection = document.querySelector(".start-section");
 const startButton = document.querySelector(".start-btn");
 const blocQuestion = document.querySelector(".bloc-question");
 const questionNumber = document.querySelector(".numeroQ");
@@ -243,7 +246,12 @@ au clic de fin faire apparaitre le score et les text/image definies (tableaux)*/
     { text: "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe", answer: false, },
     { text: "Java est une version améliorée de JavaScript", answer: false, },
     { text: "Java est une île, ça n'a rien à voir !", answer: false, },
+    { text: "C'est le même langage, mais le nom  JavaScript  est utilisé pour le code s'exécutant dans une page Web", answer: true, },
+    { text: "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe", answer: false, },
+    { text: "Java est une version améliorée de JavaScript", answer: false, },
+    { text: "Java est une île, ça n'a rien à voir !", answer: false, },
   ];
+
 
   choices.forEach((choiceAnswer) => {
     const li = document.createElement("li");
@@ -266,8 +274,28 @@ au clic de fin faire apparaitre le score et les text/image definies (tableaux)*/
     });
 
     let score = 0;
+    li.textContent = choiceAnswer.text;
+
+
+    li.addEventListener("click", () => {
+
+      if (choiceAnswer.answer) {
+        li.style.backgroundColor = "green";
+        li.style.color = "white";
+        score++;
+      }
+      else {
+        li.style.backgroundColor = "red";
+        li.style.color = "white";
+      }
+
+
+    });
+
+    let score = 0;
 
     ul.appendChild(li);
+    console.log(score);
     console.log(score);
   });
 
@@ -277,7 +305,15 @@ au clic de fin faire apparaitre le score et les text/image definies (tableaux)*/
   // score.textContent= `${score/10}`;
   // mainSection.appendChild(score);
 
+  // let score = 0;
+
+  // document.score.createElement("p");
+  // score.textContent= `${score/10}`;
+  // mainSection.appendChild(score);
+
   mainSection.appendChild(container);
   mainSection.appendChild(ul);
+
+}); */
 
 }); */
