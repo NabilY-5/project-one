@@ -133,10 +133,10 @@ startButton.addEventListener("click", () => {
   showQuestion();
 });
 /*DEBUT DE LA BOUCLE -- definir une fonction qui fait une boucle de 9tours*/
-
+const questionDetails = questions[currentQuestionIndex]
 /*affichage numero de la question, enoncé et les reponses*/
 const showQuestion = () => {
-  const questionDetails = questions[currentQuestionIndex]
+
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
   /* RACCOURCI NE FONCTIONNE PAS
@@ -145,6 +145,8 @@ const showQuestion = () => {
       li.textContent = currentAnswer;
       responses.appendChild(li);
     }*/
+
+  /*remettre les couleurs à ZERO*/
 
   reponse1.textContent = questionDetails.answers[0];
   reponses.appendChild(reponse1);
@@ -163,6 +165,7 @@ const showQuestion = () => {
 
 [reponse1, reponse2, reponse3, reponse4].forEach(function (element) {
   element.addEventListener("click", () => {
+    /*chercher à ne plus cliquer sur les autres reponses*/
     if (element.textContent == questions[currentQuestionIndex].good) {
       element.style.backgroundColor = "green";
       element.style.color = "white";
@@ -171,49 +174,54 @@ const showQuestion = () => {
     else {
       element.style.backgroundColor = "red";
       element.style.color = "white";
-      /*selected.style.backgroundColor = "green";
-
-      AFFICHER LA BONNE REPONSE EN VERT*/
-    };
-    console.log(score);
-    /* une fois la reponse choise, faire apparaitre le bouton, incrementer l'index. */
-    nextQ()
-
-
-    currentQuestionIndex++
+      [reponse1, reponse2, reponse3, reponse4].forEach((response) => {
+        if (response.textContent === questions[currentQuestionIndex].good) {
+          response.style.backgroundColor = "green";
+          response.style.color = "white";
+        }
+      });
+    }
 
     nextButton.style.display = "block";
-    nextButton.textContent = "question suivante";
-
-
+    nextButton.textContent = "Question suivante";
   });
-
-
 });
 
+console.log(score);
+/* une fois la reponse choise, faire apparaitre le bouton, incrementer l'index. */
+nextQ()
 
 
-if (currentQuestionIndex < questions.length) {
-  showQuestion()
-}
-else {
-  ShowScore()
-}
+currentQuestionIndex++
+
+nextButton.style.display = "block";
+nextButton.textContent = "question suivante";
+
+
+/* quand tu appuie sur le btn next */
 
 
 
 
+const nextQ = () => {
 
-const nextQ = () => { /* A REVOIR POUR ne pas creer 10 btn et enlever les couleurs */
+
   nextButton.textContent = "Prochaine question"
   nextButton.addEventListener("click", () => {
-    showQuestion();
+    if (currentQuestionIndex < questions.length) {
+      /*mettre la fonction enlever les couleurs*/
+      showQuestion()
+    }
+    else {
+      ShowScore()
+    }
   });
 }
 
 const ShowScore = () => {
   blocQuestion.style.display = "none";
-
+  nextButton.style.display = "block";/*attention le bouton va s'afficher au dessus*/
+  nextButton.textContent = 'Play Again'
   if (score > 5) {
     winorloose.textContent = "Bravo!";
     /* pb a afficher l'image */
@@ -224,11 +232,11 @@ const ShowScore = () => {
   }
   scorediv.textContent = `Tu as obtenu ${score} / ${questions.length}`;
 
-  nextBtn.textContent = 'Play Again'
+
   fin = true;
 }
 
-
+/*chercher à ne plus cliquer sur les autres reponses*/
 
 
 
