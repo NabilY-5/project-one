@@ -133,10 +133,10 @@ startButton.addEventListener("click", () => {
   showQuestion();
 });
 /*DEBUT DE LA BOUCLE -- definir une fonction qui fait une boucle de 9tours*/
-const questionDetails = questions[currentQuestionIndex]
+
 /*affichage numero de la question, enoncé et les reponses*/
 const showQuestion = () => {
-
+  const questionDetails = questions[currentQuestionIndex]
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
   /* RACCOURCI NE FONCTIONNE PAS
@@ -184,29 +184,25 @@ const showQuestion = () => {
 
     nextButton.style.display = "block";
     nextButton.textContent = "Question suivante";
+
+    /* une fois la reponse choise, faire apparaitre le bouton, incrementer l'index. */
+    nextQ()
+
+
+    currentQuestionIndex++
+
+
   });
 });
-
-console.log(score);
-/* une fois la reponse choise, faire apparaitre le bouton, incrementer l'index. */
-nextQ()
-
-
-currentQuestionIndex++
-
-nextButton.style.display = "block";
-nextButton.textContent = "question suivante";
 
 
 /* quand tu appuie sur le btn next */
 
 
-
-
 const nextQ = () => {
 
 
-  nextButton.textContent = "Prochaine question"
+
   nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < questions.length) {
       /*mettre la fonction enlever les couleurs*/
