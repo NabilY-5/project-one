@@ -146,7 +146,7 @@ const showQuestion = () => {
       responses.appendChild(li);
     }*/
 
-  /*remettre les couleurs à ZERO*/
+  //remettre les couleurs à ZERO00000000000000000
 
   reponse1.textContent = questionDetails.answers[0];
   reponses.appendChild(reponse1);
