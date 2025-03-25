@@ -140,6 +140,8 @@ const showQuestion = () => {
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
 
+  //remettre les couleurs à ZERO00000000000000000
+
   reponse1.textContent = questionDetails.answers[0];
   reponses.appendChild(reponse1);
 
@@ -157,6 +159,7 @@ const showQuestion = () => {
 
 [reponse1, reponse2, reponse3, reponse4].forEach(function (element) {
   element.addEventListener("click", () => {
+    /*chercher à ne plus cliquer sur les autres reponses*/
     /*chercher à ne plus cliquer sur les autres reponses*/
     if (element.textContent == questions[currentQuestionIndex].good) {
       element.style.backgroundColor = "green";
