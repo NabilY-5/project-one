@@ -130,22 +130,16 @@ startButton.addEventListener("click", () => {
   intro.style.display = "none";
   startSection.style.display = "none";
   blocQuestion.style.display = "block";
+  
   showQuestion();
 });
-/*DEBUT DE LA BOUCLE -- definir une fonction qui fait une boucle de 9tours*/
 
 /*affichage numero de la question, enoncé et les reponses*/
 const showQuestion = () => {
   const questionDetails = questions[currentQuestionIndex]
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
-  /* RACCOURCI NE FONCTIONNE PAS
-    for (let i = 0; i < questionDetails.answers.length; i++) {
-      const currentAnswer = questionDetails.answers[i];
-      li.textContent = currentAnswer;
-      responses.appendChild(li);
-    }*/
-
+  
   reponse1.textContent = questionDetails.answers[0];
   reponses.appendChild(reponse1);
 
@@ -171,64 +165,71 @@ const showQuestion = () => {
     else {
       element.style.backgroundColor = "red";
       element.style.color = "white";
-      /*selected.style.backgroundColor = "green";
+      [reponse1, reponse2, reponse3, reponse4].forEach((response) => {
+        if (response.textContent === questions[currentQuestionIndex].good) {
+          response.style.backgroundColor = "green";
+          response.style.color = "white";
+        }
+      });
+    }
 
-      AFFICHER LA BONNE REPONSE EN VERT*/
-    };
-    console.log(score);
-    /* une fois la reponse choise, faire apparaitre le bouton, incrementer l'index. */
+    nextButton.style.display = "block";
+    nextButton.textContent = "Question suivante";
+
     nextQ()
 
 
     currentQuestionIndex++
 
-    nextButton.style.display = "block";
-    nextButton.textContent = "question suivante";
-
 
   });
-
-
 });
 
 
+/* quand tu appuie sur le btn next */
 
-if (currentQuestionIndex < questions.length) {
-  showQuestion()
-}
-else {
-  ShowScore()
-}
+const resetColors = () => {
+  [reponse1, reponse2, reponse3, reponse4].forEach((element) => {
+    element.style.backgroundColor = ""; 
+    element.style.color = ""; 
+  });
+};
 
-
-
-
-
-const nextQ = () => { /* A REVOIR POUR ne pas creer 10 btn et enlever les couleurs */
-  nextButton.textContent = "Prochaine question"
+const nextQ = () => {
   nextButton.addEventListener("click", () => {
-    showQuestion();
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+      resetColors();
+      nextButton.style.display = "none";
+    }
+    else {
+      ShowScore()
+    }
   });
 }
 
 const ShowScore = () => {
   blocQuestion.style.display = "none";
-
+  nextButton.style.display = "block";
+  nextButton.textContent = 'Play Again';
   if (score > 5) {
     winorloose.textContent = "Bravo!";
-    /* pb a afficher l'image */
+    finalimg.src ="./imgwinner.png";
+    finalimg.style.width = "50vw";
 
   } else {
     winorloose.textContent = "Looser!";
-    /*finalimg.src = */
+    finalimg.src ="./boycrying.png";
+    finalimg.style.width = "50vw";
+    
   }
   scorediv.textContent = `Tu as obtenu ${score} / ${questions.length}`;
 
-  nextBtn.textContent = 'Play Again'
+
   fin = true;
 }
 
-
+/*chercher à ne plus cliquer sur les autres reponses*/
 
 
 
