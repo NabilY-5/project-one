@@ -82,7 +82,13 @@ footer {
     padding: 8px;
 }
 
+
+.bloc-question {
+    display: none;
+}
+
 /* Page Javascript 1ere question */
+
 ul {
     list-style: none;
     margin: 40px 0;
@@ -99,47 +105,67 @@ li {
     font-size: 1.1rem;
     text-justify: auto;
 
-    
-}
-
-ul li:hover  {
-   border: solid  3px ;
-   box-shadow:10px 5px 5px black;
-}
-
-@media screen and (min-width: 1200px ) {
- 
-
-main {
-    display: flex;
-    flex-direction: row;
 
 }
 
-.intro {
-    width: 50%;
-}
-.start-section {
-    flex-direction: row;
+
+ul li:hover {
+    border: solid 1px;
+    box-shadow: 10px 5px 5px black;
 }
 
-.quiz-image {
-    width: 70%;
-    margin-left: 20%;
+h3 {
+    color: white;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
 }
 
-.start-btn {
-    margin-top: 20%;
+h4 {
+    color: white;
+    font-family: roboto;
 }
 
-.intro p {
-    font-size: 1.1rem;
-    margin-top: 5% ;
-}
-    
+.winnerorlooser {
+    color: white;
 }
 
-@media screen and ( min-width: 768px) and (max-width: 1200px) {
+
+
+
+@media screen and (min-width: 1200px) {
+
+
+    main {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .intro {
+        width: 50%;
+    }
+
+    .start-section {
+        flex-direction: row;
+    }
+
+    .quiz-image {
+        width: 70%;
+        margin-left: 20%;
+    }
+
+    .start-btn {
+        margin-top: 20%;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+        margin-top: 5%;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
     .intro p {
         width: 60%;
         font-size: 1.1rem;
