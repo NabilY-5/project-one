@@ -13,7 +13,8 @@ const reponse4 = document.querySelector(".reponse4");
 const li = document.querySelector("li");
 const winorloose = document.querySelector(".winnerorlooser");
 const scorediv = document.querySelector(".score");
-const finalimg = document.querySelector(".finalimg")
+const finalimg = document.querySelector(".finalimg");
+const nextButton = document.querySelector(".next-btn");
 
 
 let currentQuestionIndex = 0;
@@ -180,21 +181,32 @@ const showQuestion = () => {
 
 
     currentQuestionIndex++
-    if (currentQuestionIndex < questions.length) {
-      showQuestion()
-    }
-    else {
-      ShowScore()
-    }
+
+    nextButton.style.display = "block";
+    nextButton.textContent = "question suivante";
+
 
   });
+
+
 });
+
+
+
+if (currentQuestionIndex < questions.length) {
+  showQuestion()
+}
+else {
+  ShowScore()
+}
+
+
+
+
+
 const nextQ = () => { /* A REVOIR POUR ne pas creer 10 btn et enlever les couleurs */
-  const nextbtn = document.createElement("button");
-  nextbtn.type = "button";
-  nextbtn.textContent = "Prochaine question"
-  reponses.appendChild(nextbtn);
-  nextbtn.addEventListener("click", () => {
+  nextButton.textContent = "Prochaine question"
+  nextButton.addEventListener("click", () => {
     showQuestion();
   });
 }

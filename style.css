@@ -87,6 +87,12 @@ footer {
     display: none;
 }
 
+.next-btn {
+    display: none;
+    background-color: white;
+}
+
+
 /* Page Javascript 1ere question */
 
 ul {
