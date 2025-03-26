@@ -13,9 +13,14 @@ const reponse4 = document.querySelector(".reponse4");
 const li = document.querySelector("li");
 const winorloose = document.querySelector(".winnerorlooser");
 const scorediv = document.querySelector(".score");
-const finalimg = document.querySelector(".finalimg");
+const finalPage = document.querySelector(".finalpage");
+const finalWinner = document.querySelector(".finalwinner");
+const finalLooser = document.querySelector(".finallooser");
 const nextButton = document.querySelector(".next-btn");
 const endButtonDiv = document.querySelector(".end-button");
+const dialog = document.querySelector("dialog");
+const iButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
 
 
 let currentQuestionIndex = 0;
@@ -125,7 +130,17 @@ const questions = [
     good: "Asynchronous JavaScript and XML"
   }];
 
+
+iButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
+
 /*actions à partir du click sur le start btn */
+
 
 startButton.addEventListener("click", () => {
   intro.style.display = "none";
@@ -230,18 +245,17 @@ const nextQ = () => {
 const ShowScore = () => {
   blocQuestion.style.display = "none";
   endButtonDiv.style.display = "block";
+  finalPage.style.display ="block";
 
 
 
   if (score > 5) {
-    winorloose.textContent = "Bravo!";
-    finalimg.src = "./imgwinner.png";
-    finalimg.style.width = "50vw";
-
+    winorloose.textContent = "Bravo !";
+    finalWinner.style.display ="block";
+    
   } else {
-    winorloose.textContent = "Looser!";
-    finalimg.src = "./boycrying.png";
-    finalimg.style.width = "50vw";
+    winorloose.textContent = "Looser !";
+    finalLooser.style.display ="block";
   }
 
 
@@ -253,7 +267,7 @@ const ShowScore = () => {
 }
 
 
-endButtonDiv.textContent = "play again";
+endButtonDiv.textContent = "Play Again";
 endButtonDiv.addEventListener("click", () => {
   location.reload();
 });
