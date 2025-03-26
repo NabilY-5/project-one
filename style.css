@@ -100,7 +100,8 @@ li {
     transition: background-color 0.5s;
     font-family: "roboto";
     font-size: 1.1rem;
-    text-justify: auto;
+    /*text-justify: auto;*/
+    cursor: pointer;
 }
 
 
@@ -151,7 +152,8 @@ h4 {
 @media screen and (min-width: 1200px) {
 
 
-    main {
+
+    .accueil {
         display: flex;
         flex-direction: row;
     }
@@ -166,8 +168,27 @@ h4 {
         margin-left: 20%;
     }
 
+    .bloc-question {
+        display: none;
+        margin-right: 50vw;
+        width: 600px;
+    }
+
+    .numeroQ,
+    .enonce,
+    .reponses,
+    .next-btn {
+        margin-right: 10%;
+    }
+
+
+
     .desktop-img {
         display: block;
+        width: 30vw;
+        position: absolute;
+        top: 30vh;
+        left: 60vw;
     }
 
     .start-btn {

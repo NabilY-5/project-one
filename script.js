@@ -161,20 +161,26 @@ const showQuestion = () => {
 [reponse1, reponse2, reponse3, reponse4].forEach(function (element) {
   element.addEventListener("click", () => {
     /*chercher à ne plus cliquer sur les autres reponses*/
-    /*chercher à ne plus cliquer sur les autres reponses*/
+    [reponse1, reponse2, reponse3, reponse4].forEach((btn) => {
+      btn.style.pointerEvents = "none";
+    });
+
     if (element.textContent == questions[currentQuestionIndex].good) {
       element.style.backgroundColor = "green";
       element.style.color = "white";
       score++;
+
     }
     else {
       element.style.backgroundColor = "red";
       element.style.color = "white";
+
       [reponse1, reponse2, reponse3, reponse4].forEach((response) => {
         if (response.textContent === questions[currentQuestionIndex].good) {
           response.style.backgroundColor = "green";
           response.style.color = "white";
         }
+
       });
     }
 
@@ -207,6 +213,9 @@ const nextQ = () => {
       showQuestion();
       resetColors();
       nextButton.style.display = "none";
+      [reponse1, reponse2, reponse3, reponse4].forEach((btn) => {
+        btn.style.pointerEvents = "auto";
+      });
     }
     else {
       ShowScore()
