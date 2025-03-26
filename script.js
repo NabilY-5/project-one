@@ -15,11 +15,12 @@ const winorloose = document.querySelector(".winnerorlooser");
 const scorediv = document.querySelector(".score");
 const finalimg = document.querySelector(".finalimg");
 const nextButton = document.querySelector(".next-btn");
+const endButtonDiv = document.querySelector(".end-button");
 
 
 let currentQuestionIndex = 0;
 let score = 0;
-let fin = false;
+
 
 /* base de données de questions et reponses*/
 const questions = [
@@ -27,17 +28,17 @@ const questions = [
     question: "Quel est le rapport entre Java et JavaScript?",
     answers: [
       "C'est le même langage, mais le nom  JavaScript  est utilisé pour le code s'exécutant dans une page Web",
-      "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe",
       "Java est une version améliorée de JavaScript",
       "Java est une île, ça n'a rien à voir !",
+      "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe",
     ],
     good: "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe"
   },
   {
     question: "En quelle année est né HTML ?",
     answers: [
-      "Dans les années 70, avec Arpanet",
       "Entre 1986 et 1988, avec le Club Dorothée",
+      "Dans les années 70, avec Arpanet",
       "En 1990 exactement, avec la naissance d'Emma Watson",
       "Plutôt en 1993 non ? Sous le mandat Bill Clinton",
     ],
@@ -67,8 +68,8 @@ const questions = [
     question: "Qui est Tim Berners-Lee ?",
     answers: [
       "l’inventeur de Flexbox",
-      "l’inventeur du Web",
       "l’inventeur du Responsive Webdesign",
+      "l’inventeur du Web",
       "l’inventeur de CSS",
     ],
     good: "l’inventeur du Web"
@@ -77,9 +78,9 @@ const questions = [
     question: "En combien de jours JavaScript a-t-il été conçu pour Netscape ?",
     answers: [
       "Pendant les fêtes de fin d'année 1993, entre deux morceaux de bûche",
-      "En 10 jours seulement, comme un véritable sprint codé",
       "En un an complet, avec beaucoup de café et de nuits blanches",
       "Sous le mandat de Bill Clinton, mais on ne sait pas combien de temps exactement",
+      "En 10 jours seulement, comme un véritable sprint codé",
     ],
     good: "En 10 jours seulement, comme un véritable sprint codé"
   },
@@ -96,9 +97,9 @@ const questions = [
   {
     question: "Que signifie CSS?",
     answers: [
-      "Cascading Style Sheets",
       "Create Simple Samples",
       "C'est Super Simple !",
+      "Cascading Style Sheets",
       "Choucroute et Saucisses de Strasbourg",
     ],
     good: "Cascading Style Sheets"
@@ -130,21 +131,15 @@ startButton.addEventListener("click", () => {
   intro.style.display = "none";
   startSection.style.display = "none";
   blocQuestion.style.display = "block";
+
   showQuestion();
 });
-/*DEBUT DE LA BOUCLE -- definir une fonction qui fait une boucle de 9tours*/
-const questionDetails = questions[currentQuestionIndex]
+
 /*affichage numero de la question, enoncé et les reponses*/
 const showQuestion = () => {
-
+  const questionDetails = questions[currentQuestionIndex]
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
-  /* RACCOURCI NE FONCTIONNE PAS
-    for (let i = 0; i < questionDetails.answers.length; i++) {
-      const currentAnswer = questionDetails.answers[i];
-      li.textContent = currentAnswer;
-      responses.appendChild(li);
-    }*/
 
   //remettre les couleurs à ZERO00000000000000000
 
@@ -166,6 +161,7 @@ const showQuestion = () => {
 [reponse1, reponse2, reponse3, reponse4].forEach(function (element) {
   element.addEventListener("click", () => {
     /*chercher à ne plus cliquer sur les autres reponses*/
+    /*chercher à ne plus cliquer sur les autres reponses*/
     if (element.textContent == questions[currentQuestionIndex].good) {
       element.style.backgroundColor = "green";
       element.style.color = "white";
@@ -182,11 +178,9 @@ const showQuestion = () => {
       });
     }
 
-
     nextButton.style.display = "block";
     nextButton.textContent = "Question suivante";
 
-    /* une fois la reponse choise, faire apparaitre le bouton, incrementer l'index. */
     nextQ()
 
 
@@ -200,114 +194,57 @@ const showQuestion = () => {
 /* quand tu appuie sur le btn next */
 
 
+const resetColors = () => {
+  [reponse1, reponse2, reponse3, reponse4].forEach((element) => {
+    element.style.backgroundColor = "";
+    element.style.color = "";
+  });
+};
 
 const nextQ = () => {
-
-const nextQ = () => {
-
-
-
   nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < questions.length) {
-      /*mettre la fonction enlever les couleurs*/
-      showQuestion()
+      showQuestion();
+      resetColors();
+      nextButton.style.display = "none";
     }
     else {
       ShowScore()
+      console.log(ShowScore);
+
     }
   });
 }
 
+
+
 const ShowScore = () => {
   blocQuestion.style.display = "none";
-  nextButton.style.display = "block";/*attention le bouton va s'afficher au dessus*/
-  nextButton.textContent = 'Play Again'
+  endButtonDiv.style.display = "block";
+
+
+
   if (score > 5) {
     winorloose.textContent = "Bravo!";
-    /* pb a afficher l'image */
+    finalimg.src = "./imgwinner.png";
+    finalimg.style.width = "50vw";
 
   } else {
     winorloose.textContent = "Looser!";
-    /*finalimg.src = */
+    finalimg.src = "./boycrying.png";
+    finalimg.style.width = "50vw";
   }
+
+
   scorediv.textContent = `Tu as obtenu ${score} / ${questions.length}`;
 
 
-  fin = true;
+
+
 }
 
-/*chercher à ne plus cliquer sur les autres reponses*/
 
-
-
-
-/*FIN DE LA BOUCLE DE QUESTIONS*/
-
-/*FAIRE APPARAITRE A LA QUESTION 10 UN nouveau bouton "fin"
-au clic de fin faire apparaitre le score et les text/image definies (tableaux)*/
-
-
-
-
-/* startButton.addEventListener("click", () => {
-  mainSection.textContent = "";
-
-  const container = document.createElement("div");
-
-  const h1 = document.createElement("h1");
-  h1.textContent = "Question 1/10";
-  h1.style.marginBottom = "40px";
-
-  const h2 = document.createElement("h2");
-  h2.textContent = "Quel est le rapport entre Java et JavaScript?";
-  h2.style.fontFamily = "roboto";
-
-  container.appendChild(h1);
-  container.appendChild(h2);
-
-  const ul = document.createElement("ul");
-
-  const choices = [
-    { text: "C'est le même langage, mais le nom  JavaScript  est utilisé pour le code s'exécutant dans une page Web", answer: true, },
-    { text: "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe", answer: false, },
-    { text: "Java est une version améliorée de JavaScript", answer: false, },
-    { text: "Java est une île, ça n'a rien à voir !", answer: false, },
-  ];
-
-  choices.forEach((choiceAnswer) => {
-    const li = document.createElement("li");
-    li.textContent = choiceAnswer.text;
-
-
-    li.addEventListener("click", () => {
-
-      if (choiceAnswer.answer) {
-        li.style.backgroundColor = "green";
-        li.style.color = "white";
-        score++;
-      }
-      else {
-        li.style.backgroundColor = "red";
-        li.style.color = "white";
-      }
-
-
-    });
-
-    let score = 0;
-
-    ul.appendChild(li);
-    console.log(score);
-  });
-
-  // let score = 0;
-
-  // document.score.createElement("p");
-  // score.textContent= `${score/10}`;
-  // mainSection.appendChild(score);
-
-  mainSection.appendChild(container);
-  mainSection.appendChild(ul);
-
-}); */
-
+endButtonDiv.textContent = "play again";
+endButtonDiv.addEventListener("click", () => {
+  location.reload();
+});

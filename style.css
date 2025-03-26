@@ -7,7 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: solid red 1px; */
+    /*border: solid red 1px;*/
 }
 
 
@@ -20,6 +20,7 @@ body {
     align-items: center;
     justify-content: space-between;
     min-height: 100vh;
+    text-align: center;
 }
 
 header {
@@ -28,14 +29,6 @@ header {
     padding: 1rem;
     text-align: center;
     font-size: 1.8rem;
-}
-
-
-main {
-    width: 100%;
-    padding: 5%;
-    text-align: center;
-
 }
 
 .intro {
@@ -87,11 +80,9 @@ footer {
     display: none;
 }
 
-.next-btn {
+.desktop-img {
     display: none;
-    background-color: white;
 }
-
 
 /* Page Javascript 1ere question */
 
@@ -110,8 +101,6 @@ li {
     font-family: "roboto";
     font-size: 1.1rem;
     text-justify: auto;
-
-
 }
 
 
@@ -135,8 +124,29 @@ h4 {
     color: white;
 }
 
+.next-btn {
+    display: none;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    border: none;
+    font-family: "lilita one";
+    cursor: pointer;
+}
 
-
+.end-button {
+    display: none;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    border: none;
+    font-family: "lilita one";
+    cursor: pointer;
+}
 
 @media screen and (min-width: 1200px) {
 
@@ -144,20 +154,20 @@ h4 {
     main {
         display: flex;
         flex-direction: row;
-
     }
 
     .intro {
         width: 50%;
     }
 
-    .start-section {
-        flex-direction: row;
-    }
 
     .quiz-image {
         width: 70%;
         margin-left: 20%;
+    }
+
+    .desktop-img {
+        display: block;
     }
 
     .start-btn {
@@ -169,6 +179,10 @@ h4 {
         margin-top: 5%;
     }
 
+    .next-btn {
+        margin-top: 22%;
+        margin-right: 40%;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
