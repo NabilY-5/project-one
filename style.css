@@ -7,7 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: solid red 1px; */
+    /*border: solid red 1px;*/
 }
 
 
@@ -81,14 +81,8 @@ footer {
 }
 
 .desktop-img {
-display: none;
-}
-
-.next-btn {
     display: none;
-    background-color: white;
 }
-
 
 /* Page Javascript 1ere question */
 
@@ -130,7 +124,21 @@ h4 {
     color: white;
 }
 
-.next-btn { 
+.next-btn {
+    display: none;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    border: none;
+    font-family: "lilita one";
+    cursor: pointer;
+}
+
+.end-button {
+    display: none;
+    background-color: white;
     margin: 0 auto;
     padding: 10px;
     border-radius: 10px;
@@ -142,7 +150,7 @@ h4 {
 
 @media screen and (min-width: 1200px) {
 
-    
+
     main {
         display: flex;
         flex-direction: row;
@@ -151,7 +159,7 @@ h4 {
     .intro {
         width: 50%;
     }
-    
+
 
     .quiz-image {
         width: 70%;
@@ -171,8 +179,8 @@ h4 {
         margin-top: 5%;
     }
 
-    .next-btn { 
-        margin-top: 22%; 
+    .next-btn {
+        margin-top: 22%;
         margin-right: 40%;
     }
 }
