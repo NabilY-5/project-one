@@ -7,7 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: solid red 1px; */
+    /*border: solid red 1px;*/
 }
 
 
@@ -84,12 +84,6 @@ footer {
 display: none;
 }
 
-.next-btn {
-    display: none;
-    background-color: white;
-}
-
-
 /* Page Javascript 1ere question */
 
 ul {
@@ -131,6 +125,20 @@ h4 {
 }
 
 .next-btn { 
+    display: none;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    border: none;
+    font-family: "lilita one";
+    cursor: pointer;
+}
+
+.end-button {
+    display: none;
+    background-color: white;
     margin: 0 auto;
     padding: 10px;
     border-radius: 10px;
