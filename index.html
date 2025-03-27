@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="shorcut icon" href="./logoNav.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
@@ -19,13 +20,24 @@
 <body>
 
     <header>
+        <img src="./favicone.png" alt="logo wilder">
         <h1>DEV QUIZ</h1>
+        <dialog>
+           
+            <p>Sur ce quiz <span>10 questions</span> vont apparaitre les unes après les autres. 
+            <br>Choisissez avec minutie votre réponse et passez à la suiante si vous l'osez ! (vous avez intérêt à oser sinon Ayoub connaît votre adresse). 
+            <br> Pour valider le Quiz, un minimum de <span>6 bonnes réponses</span> vous est demandé. 
+            <br> Ce Quiz déterminera si vous faites partie de la squad <span>Winner</span> ou <span>Looser</span>. Ne vous inquiétez pas si vous échouez, une nouvelle chance vous sera accordée
+            </p>
+            <button autofocus>Fermer</button>
+        </dialog>
+        <button class="instructions">&#8505;</button> 
     </header>
 
     <main>
         <div class="accueil">
             <section class="intro">
-                <h2>NOM DU QUIZ</h2>
+                <h2>À TOI DE JOUER !</h2>
                 <p>Bienvenue sur notre site de quiz dédié au développement web ! Que vous soyez débutant ou déjà
                     expérimenté, ce quiz est conçu pour vous aider à tester et à renforcer vos connaissances en HTML,
                     CSS,
@@ -35,13 +47,13 @@
                 <button class="start-btn"> LANCER LE QUIZ</button>
             </section>
 
-            <section class="start-section">
+            <div class="start-section">
                 <img src="imgdedecor.png" alt="bouton start" class="quiz-image">
-            </section>
+            </div>
         </div>
         <section class="bloc-question">
-            <h3 class="numeroQ"></h3>
-            <h4 class="enonce"></h4>
+            <h3 class="numeroQ">""</h3>
+            <h4 class="enonce">""</h4>
             <ul class="reponses">
                 <li class="reponse1"></li>
                 <li class="reponse2"></li>
@@ -55,10 +67,12 @@
                 class="desktop-img">
         </section>
 
-        <section>
-            <div class="winnerorlooser"></div>
+        <section class="finalpage">
+            <h5 class="winnerorlooser">""</h5>
             <div class="score"></div>
-            <img class="finalimg">
+            <img src="imgwinner.png" alt="image de vainqueur" class="finalwinner">
+            <img src="boycrying.png" alt="image de looser" class="finallooser">
+
             <button class="end-button"></button>
         </section>
     </main>

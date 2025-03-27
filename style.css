@@ -29,6 +29,47 @@ header {
     padding: 1rem;
     text-align: center;
     font-size: 1.8rem;
+    
+}
+
+header img {
+    display: none;
+}
+
+::backdrop {
+    background-color: var(--primary);
+    opacity: 60%;
+}
+
+dialog p {
+    font-family: "roboto";
+    font-size: 1.1rem;
+
+}
+
+dialog {
+    margin: 10% 5% 10% 8% ;
+    padding: 10px;
+    border-radius: 8px;
+    background-color:#dddddd;
+    border: none;
+}
+
+dialog button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: solid black 1px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.instructions {
+    padding: 1px 10px;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    margin-left: 90%;
 }
 
 .intro {
@@ -61,6 +102,7 @@ header {
     cursor: pointer;
 }
 
+
 .quiz-image {
     max-width: 90%;
     margin-top: 20px;
@@ -73,12 +115,17 @@ footer {
     color: black;
     font-size: .8rem;
     padding: 8px;
+    margin-top: 20px;
 }
-
 
 .bloc-question {
     display: none;
 }
+
+ .enonce {
+    font-size: 1.3rem;
+    font-weight: 400;
+ }
 
 .desktop-img {
     display: none;
@@ -88,7 +135,7 @@ footer {
 
 ul {
     list-style: none;
-    margin: 40px 0;
+    margin: 25px 0;
 }
 
 li {
@@ -97,7 +144,7 @@ li {
     padding: 10px;
     margin: 20px;
     border-radius: 10px;
-    transition: background-color 0.5s;
+    transition: background-color 1s;
     font-family: "roboto";
     font-size: 1.1rem;
     /*text-justify: auto;*/
@@ -105,9 +152,13 @@ li {
 }
 
 
-ul li:hover {
+li:hover {
     border: solid 1px;
     box-shadow: 10px 5px 5px black;
+}
+
+h2 {
+    font-weight: 300;
 }
 
 h3 {
@@ -123,6 +174,8 @@ h4 {
 
 .winnerorlooser {
     color: white;
+    font-size: 2.5rem;
+    font-weight: 400;
 }
 
 .next-btn {
@@ -131,31 +184,83 @@ h4 {
     margin: 0 auto;
     padding: 10px;
     border-radius: 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border: none;
     font-family: "lilita one";
     cursor: pointer;
+    transition: background-color 0.7s;
+}
+
+.next-btn:hover {
+    background-color: var(--primary);
+    color: #fdbb3b;
+    transform: translateY(5px);
 }
 
 .end-button {
     display: none;
     background-color: white;
-    margin: 0 auto;
-    padding: 10px;
+    margin: 15px auto;
+    padding: 10px 20px;
     border-radius: 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border: none;
     font-family: "lilita one";
     cursor: pointer;
 }
 
+.score {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.finallooser,
+.finalwinner {
+    width: 50vw;
+}
+
+.finalpage,
+.finalwinner, 
+.finallooser {
+    display: none;
+}
+
 @media screen and (min-width: 1200px) {
-
-
 
     .accueil {
         display: flex;
         flex-direction: row;
+    }
+
+    dialog p {
+        font-size: 1.3rem;
+        padding: 20px;
+    
+    }
+    
+    dialog {
+        padding-bottom: 30px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header img {
+        display: block;
+        height: 100px;
+        width: auto;
+        margin-left: 10px;
+    }
+
+    .instructions {
+        margin: 10px 10px 0;
+        height: 100%;
+}
+
+    h1 {
+        margin-top: 10px;
     }
 
     .intro {
@@ -181,8 +286,6 @@ h4 {
         margin-right: 10%;
     }
 
-
-
     .desktop-img {
         display: block;
         width: 30vw;
@@ -201,20 +304,74 @@ h4 {
     }
 
     .next-btn {
-        margin-top: 22%;
-        margin-right: 40%;
+        margin-top: 0;
+        margin-right: 42%;
     }
+
+    .finallooser,
+    .finalwinner {
+        width: 25vw;
+}
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
     .intro p {
         width: 60%;
         font-size: 1.1rem;
-        margin: 5% 0;
+        margin: 2% 0;
     }
 
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+    h1 {
+        margin-top: 10px;
+    }
+
+    .instructions {
+            margin: 10px 10px 0;
+            height: 100%;
+    }
+
+    header img {
+        display: block;
+        height: 100px;
+        width: auto;
+        margin-left: 10px;
+    }
+
+    h2 {
+        margin-top: 5%;
+    }
     .start-btn {
         margin: 5% 70% 0 0;
+    }
+
+    .numeroQ {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    .enonce {
+        font-size: 1.7rem ;
+    }
+
+    .reponses {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 50px 20px;
+    }
+
+    .next-btn {
+        font-size: 1.4rem;
+        padding: 10px 20px;
+        font-weight: 100;
+    }
+
+    .reponses li {
+        align-content: center;
+        font-size: 1.4rem;
     }
 
     .quiz-image {
