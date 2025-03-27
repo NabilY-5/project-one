@@ -22,10 +22,8 @@ const dialog = document.querySelector("dialog");
 const iButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
 
-
 let currentQuestionIndex = 0;
 let score = 0;
-
 
 /* base de données de questions et reponses*/
 const questions = [
@@ -37,7 +35,7 @@ const questions = [
       "Java est une île, ça n'a rien à voir !",
       "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe",
     ],
-    good: "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe"
+    good: "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe",
   },
   {
     question: "En quelle année est né HTML ?",
@@ -47,7 +45,7 @@ const questions = [
       "En 1990 exactement, avec la naissance d'Emma Watson",
       "Plutôt en 1993 non ? Sous le mandat Bill Clinton",
     ],
-    good: "Dans les années 70, avec Arpanet"
+    good: "Dans les années 70, avec Arpanet",
   },
   {
     question: "À quoi sert le langage CSS?",
@@ -57,7 +55,7 @@ const questions = [
       "À insérer du contenu dans une page internet",
       "À simuler une application en mode avion durant les trajets dans un bus",
     ],
-    good: "À ajouter du style aux documents web"
+    good: "À ajouter du style aux documents web",
   },
   {
     question: "Qu'est ce qu'un navigateur web?",
@@ -67,7 +65,7 @@ const questions = [
       " La toute première application mondiale",
       "Une interface pour lire et recevoir des e-mails!",
     ],
-    good: " Un logiciel capable d'interpréter et d'afficher du code HTML"
+    good: " Un logiciel capable d'interpréter et d'afficher du code HTML",
   },
   {
     question: "Qui est Tim Berners-Lee ?",
@@ -77,7 +75,7 @@ const questions = [
       "l’inventeur du Web",
       "l’inventeur de CSS",
     ],
-    good: "l’inventeur du Web"
+    good: "l’inventeur du Web",
   },
   {
     question: "En combien de jours JavaScript a-t-il été conçu pour Netscape ?",
@@ -87,7 +85,7 @@ const questions = [
       "Sous le mandat de Bill Clinton, mais on ne sait pas combien de temps exactement",
       "En 10 jours seulement, comme un véritable sprint codé",
     ],
-    good: "En 10 jours seulement, comme un véritable sprint codé"
+    good: "En 10 jours seulement, comme un véritable sprint codé",
   },
   {
     question: "Quelle est la différence fondamentale entre HTML et CSS ?",
@@ -97,7 +95,7 @@ const questions = [
       "HTML est solide, CSS est fluide",
       "Aucune idée, mais ça marche ensemble, et c'est l'essentiel",
     ],
-    good: "HTML construit la maison, CSS choisit la peinture"
+    good: "HTML construit la maison, CSS choisit la peinture",
   },
   {
     question: "Que signifie CSS?",
@@ -107,17 +105,18 @@ const questions = [
       "Cascading Style Sheets",
       "Choucroute et Saucisses de Strasbourg",
     ],
-    good: "Cascading Style Sheets"
+    good: "Cascading Style Sheets",
   },
   {
-    question: "Que voulait initialement simplifier l'invention de HTML par Tim Berners-Lee ?",
+    question:
+      "Que voulait initialement simplifier l'invention de HTML par Tim Berners-Lee ?",
     answers: [
       "La commande de pizzas au bureau du CERN",
       "Le partage de documents scientifiques sur le Web",
       "La création de mèmes avant l'heure",
       "L'organisation de soirées quiz entre collègues",
     ],
-    good: "Le partage de documents scientifiques sur le Web"
+    good: "Le partage de documents scientifiques sur le Web",
   },
   {
     question: "Que signifie l'acronyme AJAX ?",
@@ -127,9 +126,9 @@ const questions = [
       "JavaScript extensible",
       "Rien, c’est juste une suite de lettres sans aucune signification",
     ],
-    good: "Asynchronous JavaScript and XML"
-  }];
-
+    good: "Asynchronous JavaScript and XML",
+  },
+];
 
 iButton.addEventListener("click", () => {
   dialog.showModal();
@@ -141,7 +140,6 @@ closeButton.addEventListener("click", () => {
 
 /*actions à partir du click sur le start btn */
 
-
 startButton.addEventListener("click", () => {
   intro.style.display = "none";
   startSection.style.display = "none";
@@ -152,7 +150,7 @@ startButton.addEventListener("click", () => {
 
 /*affichage numero de la question, enoncé et les reponses*/
 const showQuestion = () => {
-  const questionDetails = questions[currentQuestionIndex]
+  const questionDetails = questions[currentQuestionIndex];
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
 
@@ -184,9 +182,7 @@ const showQuestion = () => {
       element.style.backgroundColor = "green";
       element.style.color = "white";
       score++;
-
-    }
-    else {
+    } else {
       element.style.backgroundColor = "red";
       element.style.color = "white";
 
@@ -195,25 +191,19 @@ const showQuestion = () => {
           response.style.backgroundColor = "green";
           response.style.color = "white";
         }
-
       });
     }
 
     nextButton.style.display = "block";
     nextButton.textContent = "Question suivante";
 
-    nextQ()
+    nextQ();
 
-
-    currentQuestionIndex++
-
-
+    currentQuestionIndex++;
   });
 });
 
-
 /* quand tu appuie sur le btn next */
-
 
 const resetColors = () => {
   [reponse1, reponse2, reponse3, reponse4].forEach((element) => {
@@ -231,41 +221,28 @@ const nextQ = () => {
       [reponse1, reponse2, reponse3, reponse4].forEach((btn) => {
         btn.style.pointerEvents = "auto";
       });
-    }
-    else {
-      ShowScore()
+    } else {
+      ShowScore();
       console.log(ShowScore);
-
     }
   });
-}
-
-
+};
 
 const ShowScore = () => {
   blocQuestion.style.display = "none";
   endButtonDiv.style.display = "block";
-  finalPage.style.display ="block";
-
-
+  finalPage.style.display = "block";
 
   if (score > 5) {
     winorloose.textContent = "Bravo !";
-    finalWinner.style.display ="block";
-    
+    finalWinner.style.display = "block";
   } else {
     winorloose.textContent = "Looser !";
-    finalLooser.style.display ="block";
+    finalLooser.style.display = "block";
   }
 
-
   scorediv.textContent = `Tu as obtenu ${score} / ${questions.length}`;
-
-
-
-
-}
-
+};
 
 endButtonDiv.textContent = "Play Again";
 endButtonDiv.addEventListener("click", () => {
