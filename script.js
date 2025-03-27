@@ -21,6 +21,8 @@ const endButtonDiv = document.querySelector(".end-button");
 const dialog = document.querySelector("dialog");
 const iButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
+const confettis = document.querySelector(".confettis");
+const storm = document.querySelector(".eclair");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -138,7 +140,7 @@ closeButton.addEventListener("click", () => {
   dialog.close();
 });
 
-/*actions à partir du click sur le start btn */
+/*Actions à partir du click sur le start btn */
 
 startButton.addEventListener("click", () => {
   intro.style.display = "none";
@@ -148,13 +150,12 @@ startButton.addEventListener("click", () => {
   showQuestion();
 });
 
-/*affichage numero de la question, enoncé et les reponses*/
+/*Affichage numero de la question, enoncé et les reponses*/
+
 const showQuestion = () => {
   const questionDetails = questions[currentQuestionIndex];
   questionNumber.textContent = `Question ${currentQuestionIndex + 1}/10`;
   enonce.textContent = questionDetails.question;
-
-  //remettre les couleurs à ZERO00000000000000000
 
   reponse1.textContent = questionDetails.answers[0];
   reponses.appendChild(reponse1);
@@ -169,11 +170,10 @@ const showQuestion = () => {
   reponses.appendChild(reponse4);
 };
 
-/*selectionner la reponse - afficher en vert si ok sinon en rouge et afficher en vert la bonne+ajouter le btn nxtjusqu'a question 9*/
+/*Selectionner la reponse - Afficher en vert la bonne réponse, sinon en rouge et implémentation du score*/
 
 [reponse1, reponse2, reponse3, reponse4].forEach(function (element) {
   element.addEventListener("click", () => {
-    /*chercher à ne plus cliquer sur les autres reponses*/
     [reponse1, reponse2, reponse3, reponse4].forEach((btn) => {
       btn.style.pointerEvents = "none";
     });
@@ -203,14 +203,14 @@ const showQuestion = () => {
   });
 });
 
-/* quand tu appuie sur le btn next */
-
 const resetColors = () => {
   [reponse1, reponse2, reponse3, reponse4].forEach((element) => {
     element.style.backgroundColor = "";
     element.style.color = "";
   });
 };
+
+/* Quand tu appuies sur le btn next */
 
 const nextQ = () => {
   nextButton.addEventListener("click", () => {
@@ -228,6 +228,8 @@ const nextQ = () => {
   });
 };
 
+/* Actions de fin de quiz */
+
 const ShowScore = () => {
   blocQuestion.style.display = "none";
   endButtonDiv.style.display = "block";
@@ -236,9 +238,13 @@ const ShowScore = () => {
   if (score > 5) {
     winorloose.textContent = "Bravo !";
     finalWinner.style.display = "block";
+    confettis.style.display = "block";
+    storm.style.display = "none";
   } else {
     winorloose.textContent = "Looser !";
     finalLooser.style.display = "block";
+    confettis.style.display = "none";
+    storm.style.display = "block";
   }
 
   scorediv.textContent = `Tu as obtenu ${score} / ${questions.length}`;
