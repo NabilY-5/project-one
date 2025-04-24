@@ -72,4 +72,6 @@ Et amusez-vous ! 😄
 
 ## ✨ Aperçu
 
-![demo](./DevQuiz-demo.gif)
+<p align="center">
+  <img src="./DevQuiz-demo.gif" alt="demo" width="300"/>
+</p>
