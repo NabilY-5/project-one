@@ -72,4 +72,4 @@ Et amusez-vous ! 😄
 
 ## ✨ Aperçu
 
-![demo](./images/demo.gif)
+![demo](./DevQuiz-demo.gif)
