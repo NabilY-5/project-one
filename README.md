@@ -56,7 +56,7 @@ Le projet est divisé de manière simple :
 
 - HTML5  
 - CSS3  
-- JavaScript (Vanilla)
+- JavaScript
 
 
 ## ✨ Aperçu
