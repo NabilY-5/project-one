@@ -1,81 +1,75 @@
-DevQuiz 💡
-Un site responsive de quiz sur le développement web réalisé avec HTML, CSS et JavaScript.
+# DevQuiz 💡
+
+Un site responsive de quiz sur le développement web réalisé avec HTML, CSS et JavaScript.  
 🧠 10 questions pour tester ses connaissances sur les bases du dev web !
 
-👥 Équipe
+## 👥 Équipe
+
 Projet réalisé dans le cadre de notre formation, en collaboration avec :
 
-Florentin 🧑‍💻
+- Florentin 🧑‍💻  
+- Nabil 👨‍💻  
+- Anaïs 👩‍💻  
+- Marina 👩‍💻
 
-Nabil 👨‍💻
+Notre tout premier projet de groupe 
 
-Anaïs 👩‍💻
+## 🎯 Objectifs pédagogiques
 
-Marina 👩‍💻
+- Créer une interface responsive  
+- Pratiquer les bases de **HTML**, **CSS** et **JavaScript**  
+- Mettre en œuvre des interactions utilisateurs  
+- Apprendre à travailler en équipe et à structurer un projet
 
-Premier projet de groupe
+## 🔍 Fonctionnalités
 
-🎯 Objectifs
-Créer un site responsive
+- ✅ 10 questions à choix multiple sur le développement web
+- ✅ Score affiché à la fin du quiz
+- ✅ Possibilité de recommencer
+- ✅ Interface responsive (mobile, tablette, desktop)
 
-Utiliser les bases de HTML, CSS et JavaScript
+## 🧠 Structure du code
 
-Travailler en équipe et apprendre à s'organiser
-
-Dynamiser une page avec du JS (gestion des questions, score, etc.)
-
-🔍 Fonctionnalités
-✅ 10 questions sur le développement web
-
-✅ Interface responsive adaptée à tous les écrans
-
-✅ Affichage du score à la fin
-
-✅ Rejouer le quiz
-
-🛠️ Technologies utilisées
-HTML5 🏗️
-
-CSS3 🎨
-
-JavaScript ⚙️
-
-🧠 Structure du code
 Le projet est divisé de manière simple :
 
-
+```
 📁 DevQuiz/
 │
 ├── index.html          -> Structure de la page
 ├── style.css           -> Styles et responsive design
 ├── script.js           -> Logique du quiz (questions, score, événements)
-└── images/             -> Illustrations
-script.js – ce qu’il fait :
-Stocke les questions/réponses sous forme de tableau d’objets
+└── images/             -> Illustrations ou gifs (optionnel)
+```
 
-Gère l’affichage dynamique des questions
+### `script.js` – ce qu’il fait :
+- Stocke les questions/réponses sous forme de tableau d’objets
+- Gère l’affichage dynamique des questions
+- Compare les réponses de l’utilisateur
+- Calcule et affiche le score final
+- Permet de relancer le quiz
 
-Compare les réponses de l’utilisateur
+### `style.css` :
+- Mise en page responsive avec media queries
+- Couleurs, boutons, animation légère pour un rendu agréable
 
-Calcule et affiche le score final
+## 🛠️ Technologies
 
-Permet de relancer le quiz
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla)
 
-style.css :
-Mise en page responsive avec media queries
+## 🚀 Lancer le projet
 
-Couleurs, boutons, animation légère pour un rendu agréable
+1. Clonez le projet :
 
-🚀 Lancer le projet en local
-Clonez le repo :
-
-bash
-Copier
-Modifier
+```bash
 git clone git@github.com:TON-UTILISATEUR/DevQuiz.git
-Ouvrez le fichier index.html dans votre navigateur.
+```
 
-Et c'est tout ! 🎉
+2. Ouvrez `index.html` dans un navigateur.
 
-✨ Aperçu
+Et amusez-vous ! 😄
 
+## ✨ Aperçu
+
+![demo](./images/demo.gif)
