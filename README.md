@@ -58,17 +58,6 @@ Le projet est divisé de manière simple :
 - CSS3  
 - JavaScript (Vanilla)
 
-## 🚀 Lancer le projet
-
-1. Clonez le projet :
-
-```bash
-git clone git@github.com:TON-UTILISATEUR/DevQuiz.git
-```
-
-2. Ouvrez `index.html` dans un navigateur.
-
-Et amusez-vous ! 😄
 
 ## ✨ Aperçu
 
